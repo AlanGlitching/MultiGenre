@@ -15,13 +15,18 @@ function App() {
   const navigationItems = [
     { id: 'hero', title: 'Home' },
     { id: 'letter', title: 'Letter to the Reader' },
+    { id: 'repetend1', title: 'Repetend 1' },
     { id: 'essay', title: 'Informative Essay' },
+    { id: 'repetend2', title: 'Repetend 2' },
     { id: 'email', title: 'Professional Advocacy' },
+    { id: 'repetend3', title: 'Repetend 3' },
     { id: 'ad', title: 'Public Message' },
+    { id: 'repetend4', title: 'Repetend 4' },
     { id: 'poem', title: 'Free Verse Poem' },
+    { id: 'repetend5', title: 'Repetend 5' },
     { id: 'monologue', title: "Monologue / Dialogue" },
-    { id: 'repetends', title: 'Refrains of Progress' },
     { id: 'conclusion', title: 'Concluding Essay / Explanation' },
+    { id: 'works-cited', title: 'Works Cited' },
   ]
 
   return (
