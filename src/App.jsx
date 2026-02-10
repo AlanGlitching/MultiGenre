@@ -1,10 +1,66 @@
+import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setSidebarOpen(false)
+    }
+  }
+
+  const navigationItems = [
+    { id: 'hero', title: 'Home' },
+    { id: 'letter', title: 'Letter to the Reader' },
+    { id: 'essay', title: 'Informative Essay' },
+    { id: 'email', title: 'Professional Advocacy' },
+    { id: 'ad', title: 'Public Message' },
+    { id: 'poem', title: 'Free Verse Poem' },
+    { id: 'monologue', title: "Monologue / Dialogue" },
+    { id: 'repetends', title: 'Refrains of Progress' },
+    { id: 'conclusion', title: 'Concluding Essay / Explanation' },
+  ]
+
   return (
     <div className="app">
-      {/* Hero / Landing Section */}
-      <section className="hero">
+      {/* Navigation Toggle Button */}
+      <button 
+        className={`nav-toggle ${sidebarOpen ? 'open' : ''}`}
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        aria-label="Toggle navigation"
+      >
+        <span className="arrow-icon">{sidebarOpen ? '←' : '→'}</span>
+      </button>
+
+      {/* Sidebar Navigation */}
+      <aside className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+        <div className="sidebar-content">
+          <h3 className="sidebar-title">Navigation</h3>
+          <nav className="sidebar-nav">
+            {navigationItems.map((item) => (
+              <button
+                key={item.id}
+                className="nav-link"
+                onClick={() => scrollToSection(item.id)}
+              >
+                {item.title}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </aside>
+
+      {/* Overlay when sidebar is open */}
+      {sidebarOpen && (
+        <div 
+          className="sidebar-overlay"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+      <section id="hero" className="hero">
         <div className="hero-content">
           <div className="sdg-badge">UN SDG #8</div>
           <h1 className="hero-title">The Future of Work: Progress at a Human Cost?</h1>
@@ -12,9 +68,7 @@ function App() {
           <p className="hero-author">Alan Tsai</p>
         </div>
       </section>
-
-      {/* Letter to the Reader */}
-      <section className="section letter-section">
+      <section id="letter" className="section letter-section">
         <div className="container">
           <h2 className="section-title">Letter to the Reader</h2>
           <div className="letter-content">
@@ -47,75 +101,60 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* Informative Essay */}
-      <section className="section essay-section">
+            {/* Repetend 1 */}
+      <section id="repetend1" className="section repetend-section">
         <div className="container">
-          <h2 className="section-title">Artificial Intelligence and the Future of Work</h2>
+          <div className="repetend-single">
+            <p className="repetend-text-large">Progress should not come at the cost of people</p>
+          </div>
+        </div>
+      </section>
+      <section id="essay" className="section essay-section">
+        <div className="container">
+          <h2 className="section-title">Informative Essay</h2>
           
           <div className="essay-content">
-            <h3 className="subsection-title">Job Displacement</h3>
+            <div className="essay-header">
+              <p className="essay-author">Alan Tsai</p>
+              <p className="essay-class">G10P ELA</p>
+              <p className="essay-date">January 19, 2026</p>
+            </div>
+            
             <p>
-              The rise of artificial intelligence has brought with it a wave of automation that threatens 
-              to displace millions of workers across various industries. From manufacturing to customer 
-              service, from data entry to even creative fields, AI systems are increasingly capable of 
-              performing tasks once thought to be exclusively human.
-            </p>
-            <blockquote className="pull-quote">
-              "By 2030, up to 800 million jobs could be lost to automation globally."
-            </blockquote>
-            <p>
-              This displacement is not uniform. Low-skilled and routine jobs are most vulnerable, creating 
-              a divide between those who can adapt and those who cannot. The consequences extend beyond 
-              individual livelihoods to entire communities and economies.
+              Technological advancements have always reshaped the way people work, and artificial intelligence (AI) represents one of the most significant transformations of the modern era. Unlike earlier machines that required constant human control, AI systems can learn, analyze data, and make decisions independently. As a result, many workers fear that AI will replace human labor on a massive scale. While AI has the potential to increase productivity and economic growth, it also raises serious concerns about unemployment, inequality, and the future of decent work. Without responsible planning, AI-driven automation could undermine United Nations Sustainable Development Goal #8, which promotes decent work and sustainable economic growth. Therefore, the impact of AI on employment depends on how societies address job displacement, invest in education and reskilling, and regulate technology ethically.
             </p>
 
-            <h3 className="subsection-title">New Opportunities</h3>
             <p>
-              However, AI also creates new opportunities. Emerging fields in AI development, data science, 
-              and human-AI collaboration require new skills and offer new career paths. The challenge lies 
-              in ensuring that these opportunities are accessible to all, not just those with advanced 
-              education or resources.
-            </p>
-            <p>
-              The future of work will likely involve humans and AI working together, with humans focusing 
-              on creativity, empathy, critical thinking, and complex problem-solving—skills that remain 
-              uniquely human.
+              One of the most pressing concerns surrounding AI is large-scale job displacement. Jobs that involve routine, repetitive, or predictable tasks are especially vulnerable to automation. According to Nexford University, industries such as manufacturing, transportation, customer service, and administrative work have already experienced workforce reductions due to AI-powered systems ("How Will AI Affect Jobs?"). Similarly, analysts cited by <em>Fortune</em> warn that continued AI adoption could impact hundreds of millions of workers worldwide, comparing human labor displacement to how horses became obsolete during the Industrial Revolution (Kolakowski, 2026). These predictions highlight the economic risk of unchecked automation, particularly for workers without access to retraining opportunities. When job losses occur without support systems, displaced workers may face long-term unemployment and financial instability, directly contradicting the goals of decent work and inclusive growth.
             </p>
 
-            <h3 className="subsection-title">Education & Reskilling</h3>
             <p>
-              The rapid pace of technological change demands a fundamental shift in how we approach 
-              education and workforce development. Traditional education systems, designed for industrial 
-              economies, must evolve to prepare students for an AI-driven world.
-            </p>
-            <blockquote className="pull-quote">
-              "Lifelong learning is no longer optional—it is essential for economic survival."
-            </blockquote>
-            <p>
-              Reskilling programs must be accessible, affordable, and aligned with emerging job markets. 
-              Governments, educational institutions, and employers share responsibility for creating pathways 
-              that allow workers to transition into new roles rather than being left behind.
+              Despite these risks, AI is not solely a threat to the labor market. It is also reshaping work by creating new opportunities that require advanced skills. The International Monetary Fund explains that AI increases demand for jobs in technology, data analysis, problem-solving, and system oversight, even as it reduces demand for routine labor (IMF, 2026). Likewise, the World Economic Forum reports that careers in data science, cybersecurity, healthcare technology, and AI ethics are expected to grow as automation expands ("AI Jobs Replacement Data Careers"). These findings suggest that AI-driven growth can support economic development if workers are prepared to transition into emerging fields. However, without deliberate investment in education, the benefits of AI will remain limited to a small, highly skilled segment of the population.
             </p>
 
-            <h3 className="subsection-title">Ethical Responsibility</h3>
             <p>
-              As we develop and deploy AI systems, we bear an ethical responsibility to consider their 
-              impact on human dignity, economic security, and social equity. Technology should enhance 
-              human capabilities and create shared prosperity, not concentrate wealth and power in the 
-              hands of a few.
+              Education and reskilling are essential to ensuring AI supports SDG #8 rather than undermines it. The IMF urges governments and employers to fund reskilling programs that allow displaced workers to move into newly created jobs instead of being pushed into low-wage or unstable employment (IMF, 2026). CNN similarly reports that economies that fail to adapt their education systems risk widening inequality as automation accelerates ("AI, Jobs, and the Economy"). By expanding access to training and lifelong learning, societies can protect workers while still embracing technological progress.
             </p>
+
             <p>
-              This requires thoughtful regulation, corporate accountability, and a commitment to ensuring 
-              that the benefits of AI are distributed equitably. We must ask not only what AI can do, 
-              but what it should do—and for whom.
+              Beyond education, ethical development and regulation of AI play a crucial role in protecting workers. Businesses must balance efficiency with social responsibility, and policymakers must establish regulations that safeguard workers' rights while encouraging innovation. When ethical oversight, education, and economic planning work together, AI can enhance productivity without sacrificing human dignity.
+            </p>
+
+            <p>
+              In conclusion, AI presents both challenges and opportunities for the global workforce. While automation threatens certain jobs, it also creates new possibilities for growth and innovation. Whether AI strengthens or weakens decent work depends on the choices made by governments, businesses, and individuals. By prioritizing education, reskilling, and ethical policy, societies can ensure that technological progress benefits everyone rather than leaving workers behind.
             </p>
           </div>
         </div>
       </section>
-
-      {/* Business Email */}
-      <section className="section email-section">
+            {/* Repetend 2 */}
+      <section id="repetend2" className="section repetend-section">
+        <div className="container">
+          <div className="repetend-single">
+            <p className="repetend-text-large">Technology should serve humanity—not replace it</p>
+          </div>
+        </div>
+      </section>
+      <section id="email" className="section email-section">
         <div className="container">
           <h2 className="section-title">Professional Advocacy</h2>
           <div className="email-container">
@@ -171,9 +210,15 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* Advertisement */}
-      <section className="section ad-section">
+            {/* Repetend 3 */}
+      <section id="repetend3" className="section repetend-section">
+        <div className="container">
+          <div className="repetend-single">
+            <p className="repetend-text-large">Decent work is a human right, not a privilege</p>
+          </div>
+        </div>
+      </section>
+      <section id="ad" className="section ad-section">
         <div className="container">
           <h2 className="section-title">Public Message</h2>
           <div className="ad-container">
@@ -194,11 +239,17 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* Poem */}
-      <section className="section poem-section">
+            {/* Repetend 4 */}
+      <section id="repetend4" className="section repetend-section">
         <div className="container">
-          <h2 className="section-title">The Human Cost</h2>
+          <div className="repetend-single">
+            <p className="repetend-text-large">Education and adaptation are pathways to dignity</p>
+          </div>
+        </div>
+      </section>
+      <section id="poem" className="section poem-section">
+        <div className="container">
+          <h2 className="section-title">Free Verse Poem</h2>
           <div className="poem-container">
             <div className="poem-text">
               <div className="poem-stanza">
@@ -227,19 +278,27 @@ function App() {
               </div>
             </div>
             <div className="poem-image">
-              <div className="empty-workplace">
-                <p className="image-placeholder">Empty Workplace</p>
-                <p className="image-caption">A reminder of what we must preserve</p>
-              </div>
+              <img 
+                src="/images/empty-office.png" 
+                alt="Empty office with one worker at a computer, surrounded by vacant workstations"
+                className="poem-image-img"
+              />
+              <p className="image-caption">A reminder of what we must preserve</p>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Monologue */}
-      <section className="section monologue-section">
+            {/* Repetend 5 */}
+      <section id="repetend5" className="section repetend-section">
         <div className="container">
-          <h2 className="section-title">A Worker's Voice</h2>
+          <div className="repetend-single">
+            <p className="repetend-text-large">The future of work must include all workers</p>
+          </div>
+        </div>
+      </section>
+      <section id="monologue" className="section monologue-section">
+        <div className="container">
+          <h2 className="section-title">Monologue / Dialogue</h2>
           <div className="monologue-content">
             <blockquote className="monologue-text">
               <p>
@@ -269,35 +328,13 @@ function App() {
           </div>
         </div>
       </section>
+            {/* Works Cited */}
+      
+      
 
-      {/* Repetends Section */}
-      <section className="section repetends-section">
+      <section id="conclusion" className="section conclusion-section">
         <div className="container">
-          <h2 className="section-title">Refrains of Progress</h2>
-          <div className="repetends-grid">
-            <div className="repetend-card">
-              <p className="repetend-text">Progress should not come at the cost of people</p>
-            </div>
-            <div className="repetend-card">
-              <p className="repetend-text">Technology should serve humanity—not replace it</p>
-            </div>
-            <div className="repetend-card">
-              <p className="repetend-text">Decent work is a human right, not a privilege</p>
-            </div>
-            <div className="repetend-card">
-              <p className="repetend-text">Education and adaptation are pathways to dignity</p>
-            </div>
-            <div className="repetend-card">
-              <p className="repetend-text">The future of work must include all workers</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Conclusion & Reflection */}
-      <section className="section conclusion-section">
-        <div className="container">
-          <h2 className="section-title">Final Reflection</h2>
+          <h2 className="section-title">Concluding Essay / Explanation</h2>
           <div className="conclusion-content">
             <p>
               This multi-genre project has explored the complex relationship between artificial intelligence 
@@ -328,6 +365,40 @@ function App() {
               #8: promoting decent work and economic growth for all. The choices we make today will shape 
               the world of tomorrow. Let us choose wisely, with humanity at the center of our vision.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="works-cited" className="section works-cited-section">
+        <div className="container">
+          <h2 className="section-title">Works Cited</h2>
+          <div className="works-cited-content">
+            <p className="works-cited-title"><strong>Works Cited (APA Format)</strong></p>
+            
+            <div className="citation-item">
+              <p>CNN. (2025, December 18). <em>AI, jobs, and the economy</em>.</p>
+              <p className="citation-url">https://edition.cnn.com/2025/12/18/business/ai-jobs-economy</p>
+            </div>
+
+            <div className="citation-item">
+              <p>International Monetary Fund. (2026, January 14). <em>New skills and AI are reshaping the future of work</em>.</p>
+              <p className="citation-url">https://www.imf.org/en/blogs/articles/2026/01/14/new-skills-and-ai-are-reshaping-the-future-of-work</p>
+            </div>
+
+            <div className="citation-item">
+              <p>Kolakowski, N. (2026, January 13). <em>Humans could go the way of horses: Goldman warns of AI job apocalypse</em>. <em>Fortune</em>.</p>
+              <p className="citation-url">https://fortune.com/2026/01/13/humans-could-go-the-way-of-horses-goldman-ai-job-apocalypse-unemployment/</p>
+            </div>
+
+            <div className="citation-item">
+              <p>Nexford University. (n.d.). <em>How will AI affect jobs?</em></p>
+              <p className="citation-url">https://www.nexford.edu/insights/how-will-ai-affect-jobs</p>
+            </div>
+
+            <div className="citation-item">
+              <p>World Economic Forum. (2025, August). <em>AI jobs replacement data and future careers</em>.</p>
+              <p className="citation-url">https://www.weforum.org/stories/2025/08/ai-jobs-replacement-data-careers/</p>
+            </div>
           </div>
         </div>
       </section>
