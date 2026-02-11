@@ -412,27 +412,27 @@ function App() {
             
             <div className="citation-item">
               <p>CNN. (2025, December 18). <em>AI, jobs, and the economy</em>.</p>
-              <p className="citation-url">https://edition.cnn.com/2025/12/18/business/ai-jobs-economy</p>
+              <a href="https://edition.cnn.com/2025/12/18/business/ai-jobs-economy" target="_blank" rel="noopener noreferrer" className="citation-url">https://edition.cnn.com/2025/12/18/business/ai-jobs-economy</a>
             </div>
 
             <div className="citation-item">
               <p>International Monetary Fund. (2026, January 14). <em>New skills and AI are reshaping the future of work</em>.</p>
-              <p className="citation-url">https://www.imf.org/en/blogs/articles/2026/01/14/new-skills-and-ai-are-reshaping-the-future-of-work</p>
+              <a href="https://www.imf.org/en/blogs/articles/2026/01/14/new-skills-and-ai-are-reshaping-the-future-of-work" target="_blank" rel="noopener noreferrer" className="citation-url">https://www.imf.org/en/blogs/articles/2026/01/14/new-skills-and-ai-are-reshaping-the-future-of-work</a>
             </div>
 
             <div className="citation-item">
               <p>Kolakowski, N. (2026, January 13). <em>Humans could go the way of horses: Goldman warns of AI job apocalypse</em>. <em>Fortune</em>.</p>
-              <p className="citation-url">https://fortune.com/2026/01/13/humans-could-go-the-way-of-horses-goldman-ai-job-apocalypse-unemployment/</p>
+              <a href="https://fortune.com/2026/01/13/humans-could-go-the-way-of-horses-goldman-ai-job-apocalypse-unemployment/" target="_blank" rel="noopener noreferrer" className="citation-url">https://fortune.com/2026/01/13/humans-could-go-the-way-of-horses-goldman-ai-job-apocalypse-unemployment/</a>
             </div>
 
             <div className="citation-item">
               <p>Nexford University. (n.d.). <em>How will AI affect jobs?</em></p>
-              <p className="citation-url">https://www.nexford.edu/insights/how-will-ai-affect-jobs</p>
+              <a href="https://www.nexford.edu/insights/how-will-ai-affect-jobs" target="_blank" rel="noopener noreferrer" className="citation-url">https://www.nexford.edu/insights/how-will-ai-affect-jobs</a>
             </div>
 
             <div className="citation-item">
               <p>World Economic Forum. (2025, August). <em>AI jobs replacement data and future careers</em>.</p>
-              <p className="citation-url">https://www.weforum.org/stories/2025/08/ai-jobs-replacement-data-careers/</p>
+              <a href="https://www.weforum.org/stories/2025/08/ai-jobs-replacement-data-careers/" target="_blank" rel="noopener noreferrer" className="citation-url">https://www.weforum.org/stories/2025/08/ai-jobs-replacement-data-careers/</a>
             </div>
           </div>
         </div>

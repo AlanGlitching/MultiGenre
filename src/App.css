@@ -768,6 +768,12 @@
   word-break: break-all;
   font-family: 'Courier New', monospace;
   margin-top: 0.25rem;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+.citation-url:hover {
+  color: #1e3a5f;
 }
 /* Responsive adjustments for sidebar */
 @media (max-width: 768px) {
