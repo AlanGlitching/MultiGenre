@@ -70,6 +70,13 @@ function App() {
           <div className="sdg-badge">UN SDG #8</div>
           <h1 className="hero-title">The Future of Work: Progress at a Human Cost?</h1>
           <h2 className="hero-subtitle">AI, Employment, and Decent Work</h2>
+          <div className="hero-image-wrap">
+            <img
+              src="/images/human-ai-hands.png"
+              alt="Human and robotic hands reaching toward each other, symbolizing connection between humanity and artificial intelligence"
+              className="hero-image"
+            />
+          </div>
           <p className="hero-author">Alan Tsai</p>
         </div>
       </section>
@@ -116,7 +123,7 @@ function App() {
       </section>
       <section id="essay" className="section essay-section">
         <div className="container">
-          <h2 className="section-title">Informative Essay</h2>
+          <h2 className="section-title">Artificial Intelligence and the Future of Work</h2>
           
           <div className="essay-content">
             <div className="essay-header">
@@ -124,7 +131,14 @@ function App() {
               <p className="essay-class">G10P ELA</p>
               <p className="essay-date">January 19, 2026</p>
             </div>
-            
+            <div className="essay-image-wrap">
+              <img
+                src="/images/factory-automation.png"
+                alt="Automated factory floor with robotic arms performing welding and manufacturing, no human workers visible"
+                className="essay-image"
+              />
+              <p className="essay-image-caption">Automation in manufacturing</p>
+            </div>
             <p>
               Technological advancements have always reshaped the way people work, and artificial intelligence (AI) represents one of the most significant transformations of the modern era. Unlike earlier machines that required constant human control, AI systems can learn, analyze data, and make decisions independently. As a result, many workers fear that AI will replace human labor on a massive scale. While AI has the potential to increase productivity and economic growth, it also raises serious concerns about unemployment, inequality, and the future of decent work. Without responsible planning, AI-driven automation could undermine United Nations Sustainable Development Goal #8, which promotes decent work and sustainable economic growth. Therefore, the impact of AI on employment depends on how societies address job displacement, invest in education and reskilling, and regulate technology ethically.
             </p>
@@ -304,6 +318,14 @@ function App() {
       <section id="monologue" className="section monologue-section">
         <div className="container">
           <h2 className="section-title">Monologue / Dialogue</h2>
+          <div className="monologue-image-wrap">
+            <img
+              src="/images/worker-portrait.png"
+              alt="Woman in workwear seated in a workshop, thoughtful expression"
+              className="monologue-image"
+            />
+            <p className="monologue-image-caption">A worker’s reflection</p>
+          </div>
           <div className="monologue-content">
             <blockquote className="monologue-text">
               <p>
@@ -340,6 +362,14 @@ function App() {
       <section id="conclusion" className="section conclusion-section">
         <div className="container">
           <h2 className="section-title">Concluding Essay / Explanation</h2>
+          <div className="conclusion-image-wrap">
+            <img
+              src="/images/conclusion-meeting.png"
+              alt="Professional meeting in a conference room with SDG 8 Decent Work and Economic Growth displayed"
+              className="conclusion-image"
+            />
+            <p className="conclusion-image-caption">Decent work and economic growth—a shared goal</p>
+          </div>
           <div className="conclusion-content">
             <p>
               This multi-genre project has explored the complex relationship between artificial intelligence 

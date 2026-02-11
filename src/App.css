@@ -83,8 +83,21 @@
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 1.8rem;
   font-weight: 300;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   opacity: 0.95;
+}
+
+.hero-image-wrap {
+  margin: 1.5rem auto 1.5rem;
+  max-width: 480px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .hero-author {
@@ -106,6 +119,7 @@
 
 .letter-content p {
   margin-bottom: 1.5rem;
+  text-indent: 2em;
 }
 
 .repetend-highlight {
@@ -139,6 +153,10 @@
 .essay-content p {
   margin-bottom: 1.5rem;
   font-size: 1.05rem;
+}
+
+.essay-content > p {
+  text-indent: 2em;
 }
 
 .pull-quote {
@@ -177,6 +195,28 @@
   font-size: 0.95rem;
   color: #6c757d;
 }
+
+.essay-image-wrap {
+  margin: 2rem auto;
+  max-width: 700px;
+}
+
+.essay-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.essay-image-caption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #6c757d;
+  text-align: center;
+  text-indent: 0;
+}
+
 /* Email Section */
 .email-section {
   background-color: #f8f9fa;
@@ -219,6 +259,7 @@
 
 .email-body p {
   margin-bottom: 1.25rem;
+  text-indent: 2em;
 }
 
 .email-body ul {
@@ -371,6 +412,27 @@
   color: #ffffff;
 }
 
+.monologue-image-wrap {
+  max-width: 420px;
+  margin: 0 auto 2rem;
+}
+
+.monologue-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.monologue-image-caption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  text-indent: 0;
+}
+
 .monologue-content {
   max-width: 700px;
   margin: 0 auto;
@@ -387,6 +449,7 @@
 
 .monologue-text p {
   margin-bottom: 1.5rem;
+  text-indent: 2em;
 }
 
 .monologue-text p:last-child {
@@ -394,6 +457,7 @@
   font-style: normal;
   font-size: 1rem;
   opacity: 0.9;
+  text-indent: 0;
 }
 
 /* Repetends Section */
@@ -435,6 +499,27 @@
   background-color: #ffffff;
 }
 
+.conclusion-image-wrap {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.conclusion-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.conclusion-image-caption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #6c757d;
+  text-align: center;
+  text-indent: 0;
+}
+
 .conclusion-content {
   max-width: 750px;
   margin: 0 auto;
@@ -443,6 +528,11 @@
 
 .conclusion-content p {
   margin-bottom: 1.5rem;
+  text-indent: 2em;
+}
+
+.conclusion-content p.conclusion-statement {
+  text-indent: 0;
 }
 
 .conclusion-statement {
