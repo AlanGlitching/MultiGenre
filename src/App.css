@@ -205,6 +205,56 @@
   text-indent: 0;
 }
 
+/* Fixed Video Player - Bottom Left Corner */
+.fixed-video-player {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  width: 320px;
+  height: 180px;
+}
+
+.fixed-video-wrapper {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.fixed-video-embed {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.fixed-video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .fixed-video-player {
+    width: 280px;
+    height: 158px;
+    bottom: 10px;
+    left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fixed-video-player {
+    width: 240px;
+    height: 135px;
+    bottom: 10px;
+    left: 10px;
+  }
+}
+
 /* Email Section */
 .email-section {
   background-color: #f8f9fa;

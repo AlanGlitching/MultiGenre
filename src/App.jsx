@@ -66,6 +66,24 @@ function App() {
           onClick={() => setSidebarOpen(false)}
         />
       )}
+      
+      {/* Fixed Video Player */}
+      <div className="fixed-video-player">
+        <div className="fixed-video-wrapper">
+          <div className="fixed-video-embed">
+            <iframe
+              width="320"
+              height="180"
+              src="https://www.youtube.com/embed/zRlIFn0ZIlU"
+              title="AI and the Future of Work"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
       <section id="hero" className="hero">
         <div className="hero-content">
           <div className="sdg-badge">UN SDG #8</div>
@@ -120,12 +138,13 @@ function App() {
           <h2 className="section-title">Artificial Intelligence and the Future of Work</h2>
           
           <div className="essay-content">
-            <div className="essay-header">
-              <p className="essay-author">Alan Tsai</p>
-              <p className="essay-class">G10P ELA</p>
-              <p className="essay-date">January 19, 2026</p>
-            </div>
-            <div className="essay-image-wrap">
+              <div className="essay-header">
+                <p className="essay-author">Alan Tsai</p>
+                <p className="essay-class">G10P ELA</p>
+                <p className="essay-date">January 19, 2026</p>
+              </div>
+              
+              <div className="essay-image-wrap">
               <img
                 src="/images/factory-automation.png"
                 alt="Automated factory floor with robotic arms performing welding and manufacturing, no human workers visible"
