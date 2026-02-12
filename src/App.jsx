@@ -26,6 +26,7 @@ function App() {
     { id: 'repetend5', title: 'Repetend 5' },
     { id: 'monologue', title: "Monologue / Dialogue" },
     { id: 'conclusion', title: 'Concluding Essay / Explanation' },
+    { id: 'related-news', title: 'Related News' },
     { id: 'works-cited', title: 'Works Cited' },
   ]
 
@@ -393,6 +394,99 @@ function App() {
               #8: promoting decent work and economic growth for all. The choices we make today will shape 
               the world of tomorrow. Let us choose wisely, with humanity at the center of our vision.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="related-news" className="section related-news-section">
+        <div className="container">
+          <h2 className="section-title">Related News</h2>
+          <div className="related-news-content">
+            <p className="related-news-intro">
+              Stay informed about the latest developments in AI and employment. Here are recent news articles 
+              that explore the ongoing impact of artificial intelligence on the workforce:
+            </p>
+            
+            <div className="news-item">
+              <h3 className="news-title">
+                <a href="https://fortune.com/2026/02/12/mass-unemployment-10-percent-feel-like-depression-ai-identity-crisis/" target="_blank" rel="noopener noreferrer">
+                  Khan Academy CEO warns even a 10% workforce reduction due to AI 'will feel like a depression'
+                </a>
+              </h3>
+              <p className="news-source">Fortune • February 12, 2026</p>
+              <p className="news-summary">
+                Salman Khan warns that even a 10% reduction in white-collar jobs due to AI could create 
+                widespread economic and psychological impacts, potentially causing identity crises for 
+                displaced professionals.
+              </p>
+            </div>
+
+            <div className="news-item">
+              <h3 className="news-title">
+                <a href="https://www.resume-now.com/job-resources/careers/ai-job-security-outlook" target="_blank" rel="noopener noreferrer">
+                  60% of U.S. Workers Expect AI to Eliminate More Jobs Than It Creates in 2026
+                </a>
+              </h3>
+              <p className="news-source">Resume Now • 2026</p>
+              <p className="news-summary">
+                A majority of American workers are pessimistic about AI's impact on employment, with 60% 
+                believing job losses will outweigh job creation, and 51% personally worried about losing 
+                their jobs to AI.
+              </p>
+            </div>
+
+            <div className="news-item">
+              <h3 className="news-title">
+                <a href="https://www.theguardian.com/technology/2026/feb/11/big-ai-job-swap-white-collar-workers-ditching-their-careers" target="_blank" rel="noopener noreferrer">
+                  The big AI job swap: why white-collar workers are ditching their careers
+                </a>
+              </h3>
+              <p className="news-source">The Guardian • February 11, 2026</p>
+              <p className="news-summary">
+                Many writers and content creators are being forced to switch careers as AI displaces their 
+                roles, with some accepting lower-paying editing positions reviewing AI-generated content.
+              </p>
+            </div>
+
+            <div className="news-item">
+              <h3 className="news-title">
+                <a href="https://hbr.org/2026/01/companies-are-laying-off-workers-because-of-ais-potential-not-its-performance" target="_blank" rel="noopener noreferrer">
+                  Companies Are Laying Off Workers Because of AI's Potential—Not Its Performance
+                </a>
+              </h3>
+              <p className="news-source">Harvard Business Review • January 2026</p>
+              <p className="news-summary">
+                Research reveals that many companies are making workforce reductions based on AI's potential 
+                rather than proven performance, affecting entry-level workers, customer service, and 
+                programming positions.
+              </p>
+            </div>
+
+            <div className="news-item">
+              <h3 className="news-title">
+                <a href="https://news.cognizant.com/2026-01-15-AI-Can-Unlock-4-5-Trillion-in-U-S-Labor-Productivity-Today,-Reveals-Cognizants-Latest-New-Work,-New-World-2026-Report" target="_blank" rel="noopener noreferrer">
+                  AI Can Unlock $4.5 Trillion in U.S. Labor Productivity Today
+                </a>
+              </h3>
+              <p className="news-source">Cognizant • January 15, 2026</p>
+              <p className="news-summary">
+                A new report estimates that AI could unlock $4.5 trillion in U.S. labor productivity, 
+                highlighting both the economic potential and the scale of transformation ahead.
+              </p>
+            </div>
+
+            <div className="news-item">
+              <h3 className="news-title">
+                <a href="https://www.hiringlab.org/2026/01/22/january-labor-market-update-jobs-mentioning-ai-are-growing-amid-broader-hiring-weakness/" target="_blank" rel="noopener noreferrer">
+                  Jobs Mentioning AI Are Growing Amid Broader Hiring Weakness
+                </a>
+              </h3>
+              <p className="news-source">Indeed Hiring Lab • January 22, 2026</p>
+              <p className="news-summary">
+                While overall hiring shows weakness, AI-related job postings continue to surge, with nearly 
+                45% of data & analytics jobs now mentioning AI, demonstrating the shifting job market landscape.
+              </p>
+            </div>
           </div>
         </div>
       </section>
