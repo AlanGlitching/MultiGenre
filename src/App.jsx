@@ -70,13 +70,6 @@ function App() {
           <div className="sdg-badge">UN SDG #8</div>
           <h1 className="hero-title">The Future of Work: Progress at a Human Cost?</h1>
           <h2 className="hero-subtitle">AI, Employment, and Decent Work</h2>
-          <div className="hero-image-wrap">
-            <img
-              src="/images/human-ai-hands.png"
-              alt="Human and robotic hands reaching toward each other, symbolizing connection between humanity and artificial intelligence"
-              className="hero-image"
-            />
-          </div>
           <p className="hero-author">Alan Tsai</p>
         </div>
       </section>
