@@ -1,8 +1,71 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './App.css'
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [videoPosition, setVideoPosition] = useState({ x: 20, y: 20 })
+  const [isDragging, setIsDragging] = useState(false)
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
+  const videoPlayerRef = useRef(null)
+
+  useEffect(() => {
+    // Set initial position to bottom left
+    const setInitialPosition = () => {
+      setVideoPosition({
+        x: 20,
+        y: window.innerHeight - 200
+      })
+    }
+    setInitialPosition()
+    window.addEventListener('resize', setInitialPosition)
+    return () => window.removeEventListener('resize', setInitialPosition)
+  }, [])
+
+  const handleMouseDown = (e) => {
+    if (e.target.closest('.video-drag-handle') && videoPlayerRef.current) {
+      const rect = videoPlayerRef.current.getBoundingClientRect()
+      setDragOffset({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      })
+      setIsDragging(true)
+      e.preventDefault()
+      e.stopPropagation()
+    }
+  }
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (isDragging && videoPlayerRef.current) {
+        const newX = e.clientX - dragOffset.x
+        const newY = e.clientY - dragOffset.y
+        
+        // Keep video within viewport bounds
+        const videoWidth = videoPlayerRef.current.offsetWidth || 320
+        const videoHeight = videoPlayerRef.current.offsetHeight || 180
+        const maxX = window.innerWidth - videoWidth
+        const maxY = window.innerHeight - videoHeight
+        
+        setVideoPosition({
+          x: Math.max(0, Math.min(newX, maxX)),
+          y: Math.max(0, Math.min(newY, maxY))
+        })
+      }
+    }
+
+    const handleMouseUp = () => {
+      setIsDragging(false)
+    }
+
+    if (isDragging) {
+      window.addEventListener('mousemove', handleMouseMove)
+      window.addEventListener('mouseup', handleMouseUp)
+      return () => {
+        window.removeEventListener('mousemove', handleMouseMove)
+        window.removeEventListener('mouseup', handleMouseUp)
+      }
+    }
+  }, [isDragging, dragOffset])
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
@@ -67,8 +130,17 @@ function App() {
         />
       )}
       
-      {/* Fixed Video Player */}
-      <div className="fixed-video-player">
+      {/* Draggable Video Player */}
+      <div 
+        className={`fixed-video-player ${isDragging ? 'dragging' : ''}`}
+        ref={videoPlayerRef}
+        style={{
+          left: `${videoPosition.x}px`,
+          bottom: 'auto',
+          top: `${videoPosition.y}px`
+        }}
+      >
+        <div className="video-drag-handle" onMouseDown={handleMouseDown}>⋮⋮</div>
         <div className="fixed-video-wrapper">
           <div className="fixed-video-embed">
             <iframe
