@@ -325,21 +325,12 @@ function App() {
       <section id="ad" className="section ad-section">
         <div className="container">
           <h2 className="section-title">Public Message</h2>
-          <div className="ad-container">
-            <div className="ad-content">
-              <h3 className="ad-headline">The Future Belongs to Those Who Adapt</h3>
-              <p className="ad-text">
-                AI is changing the world of work. Don't be left behind. 
-                Invest in your future today.
-              </p>
-              <div className="ad-buttons">
-                <button className="cta-button">Learn New Skills</button>
-                <button className="cta-button secondary">Support Fair AI</button>
-              </div>
-              <p className="ad-tagline">
-                Building a future where technology serves everyone
-              </p>
-            </div>
+          <div className="ad-banner-container">
+            <img
+              src="/images/ai-jobs-banner.png"
+              alt="Will AI Take Your Job or Help You Grow? - Information about AI impact on jobs with call to action"
+              className="ad-banner-image"
+            />
           </div>
         </div>
       </section>
