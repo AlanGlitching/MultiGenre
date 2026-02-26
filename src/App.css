@@ -232,12 +232,41 @@
   color: #ffffff;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
+  justify-content: space-between;
+  padding: 0 6px 0 10px;
   cursor: grab;
   border-radius: 8px 8px 0 0;
   font-weight: bold;
   letter-spacing: 2px;
+}
+
+.video-drag-grip {
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.video-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.video-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.video-close-btn {
+  font-size: 1.3rem;
 }
 
 .video-drag-handle:hover {
@@ -246,6 +275,26 @@
 
 .fixed-video-player.dragging .video-drag-handle {
   cursor: grabbing;
+}
+
+/* Reopen video button when closed */
+.video-reopen-btn {
+  position: fixed;
+  z-index: 1000;
+  padding: 8px 14px;
+  background-color: rgba(30, 58, 95, 0.95);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: background 0.2s;
+}
+
+.video-reopen-btn:hover {
+  background-color: rgba(30, 58, 95, 1);
 }
 
 .fixed-video-wrapper {

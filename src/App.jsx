@@ -6,6 +6,7 @@ function App() {
   const [videoPosition, setVideoPosition] = useState({ x: 20, y: 20 })
   const [isDragging, setIsDragging] = useState(false)
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
+  const [videoState, setVideoState] = useState('open') // 'open' | 'closed'
   const videoPlayerRef = useRef(null)
 
   useEffect(() => {
@@ -22,7 +23,7 @@ function App() {
   }, [])
 
   const handleMouseDown = (e) => {
-    if (e.target.closest('.video-drag-handle') && videoPlayerRef.current) {
+    if (e.target.closest('.video-drag-grip') && videoPlayerRef.current) {
       const rect = videoPlayerRef.current.getBoundingClientRect()
       setDragOffset({
         x: e.clientX - rect.left,
@@ -131,30 +132,52 @@ function App() {
       )}
       
       {/* Draggable Video Player */}
-      <div 
-        className={`fixed-video-player ${isDragging ? 'dragging' : ''}`}
-        ref={videoPlayerRef}
-        style={{
-          left: `${videoPosition.x}px`,
-          bottom: 'auto',
-          top: `${videoPosition.y}px`
-        }}
-      >
-        <div className="video-drag-handle" onMouseDown={handleMouseDown}>⋮⋮</div>
-        <div className="fixed-video-wrapper">
-          <div className="fixed-video-embed">
-            <iframe
-              width="320"
-              height="180"
-              src="https://www.youtube.com/embed/zRlIFn0ZIlU"
-              title="AI and the Future of Work"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+      {videoState === 'closed' ? (
+        <button
+          className="video-reopen-btn"
+          onClick={() => setVideoState('open')}
+          style={{ left: `${videoPosition.x}px`, top: `${videoPosition.y}px` }}
+          aria-label="Show video"
+        >
+          ▶ Video
+        </button>
+      ) : (
+        <div 
+          className={`fixed-video-player ${isDragging ? 'dragging' : ''}`}
+          ref={videoPlayerRef}
+          style={{
+            left: `${videoPosition.x}px`,
+            bottom: 'auto',
+            top: `${videoPosition.y}px`
+          }}
+        >
+          <div className="video-drag-handle" onMouseDown={handleMouseDown}>
+            <span className="video-drag-grip">⋮⋮</span>
+            <button
+              type="button"
+              className="video-btn video-close-btn"
+              onClick={(e) => { e.stopPropagation(); setVideoState('closed') }}
+              aria-label="Close video"
+              title="Close"
+            >
+              ×
+            </button>
+          </div>
+          <div className="fixed-video-wrapper">
+            <div className="fixed-video-embed">
+              <iframe
+                width="320"
+                height="180"
+                src="https://www.youtube.com/embed/zRlIFn0ZIlU"
+                title="AI and the Future of Work"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <section id="hero" className="hero">
         <div className="hero-content">
