@@ -199,9 +199,6 @@ function App() {
               As we stand at the threshold of unprecedented technological advancement, it is crucial that 
               we examine not only the benefits but also the human costs of progress.
             </p>
-            <p className="repetend-highlight">
-              <strong>Progress should not come at the cost of people.</strong>
-            </p>
             <p>
               This multi-genre project brings together different forms of communication—essays, emails, 
               advertisements, poetry, and personal narratives—to create a comprehensive understanding of 
