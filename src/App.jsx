@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import './App.css'
+import aiJobsBanner from './assets/ai-jobs-banner.png'
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -349,7 +350,7 @@ function App() {
           <div className="ad-banner-container">
             {!adImageError ? (
               <img
-                src="/images/ai-jobs-banner.png"
+                src={aiJobsBanner}
                 alt="Will AI Take Your Job or Help You Grow? - Information about AI impact on jobs with call to action"
                 className="ad-banner-image"
                 onError={() => setAdImageError(true)}
