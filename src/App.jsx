@@ -349,7 +349,7 @@ function App() {
           <div className="ad-banner-container">
             {!adImageError ? (
               <img
-                src="/images/ai-jobs-banner.png"
+                src="/Gemini_Generated_Image_m6kd22m6kd22m6kd.png"
                 alt="Will AI Take Your Job or Help You Grow? - Information about AI impact on jobs with call to action"
                 className="ad-banner-image"
                 onError={() => setAdImageError(true)}
