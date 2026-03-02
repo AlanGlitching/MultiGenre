@@ -393,12 +393,14 @@
 
 /* Advertisement Section */
 .ad-section {
-  background-color: #ffffff;
+  background-color: #f8f9fa;
+  min-height: 280px;
 }
 
 .ad-banner-container {
   max-width: 600px;
   margin: 0 auto;
+  min-height: 200px;
 }
 
 .ad-banner-image {
