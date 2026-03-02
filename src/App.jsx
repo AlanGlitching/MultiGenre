@@ -7,6 +7,7 @@ function App() {
   const [isDragging, setIsDragging] = useState(false)
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
   const [videoState, setVideoState] = useState('open') // 'open' | 'closed'
+  const [adImageError, setAdImageError] = useState(false)
   const videoPlayerRef = useRef(null)
 
   useEffect(() => {
@@ -346,11 +347,19 @@ function App() {
         <div className="container">
           <h2 className="section-title">Public Message</h2>
           <div className="ad-banner-container">
-            <img
-              src="/images/ai-jobs-banner.png"
-              alt="Will AI Take Your Job or Help You Grow? - Information about AI impact on jobs with call to action"
-              className="ad-banner-image"
-            />
+            {!adImageError ? (
+              <img
+                src="/images/ai-jobs-banner.png"
+                alt="Will AI Take Your Job or Help You Grow? - Information about AI impact on jobs with call to action"
+                className="ad-banner-image"
+                onError={() => setAdImageError(true)}
+              />
+            ) : (
+              <div className="ad-banner-fallback">
+                <p className="ad-fallback-title">Will AI Take Your Job or Help You Grow?</p>
+                <p className="ad-fallback-text">Support policies that protect workers. Learn new skills. Demand decent work in the age of AI.</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
