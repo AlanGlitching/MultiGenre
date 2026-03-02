@@ -392,44 +392,23 @@
 }
 
 /* Advertisement Section */
-.ad-section {
+.public-message-section {
   background-color: #f8f9fa;
   min-height: 280px;
 }
 
-.ad-banner-container {
+.public-message-banner {
   max-width: 600px;
   margin: 0 auto;
   min-height: 200px;
 }
 
-.ad-banner-image {
+.public-message-image {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.ad-banner-fallback {
-  padding: 2rem;
-  background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-  color: #fff;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.ad-fallback-title {
-  font-family: 'Helvetica Neue', 'Arial', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.ad-fallback-text {
-  font-size: 0.75rem;
-  line-height: 1.6;
-  opacity: 0.95;
 }
 
 /* Poem Section */

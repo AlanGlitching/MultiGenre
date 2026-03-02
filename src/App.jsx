@@ -84,7 +84,7 @@ function App() {
     { id: 'repetend2', title: 'Repetend 2' },
     { id: 'email', title: 'Professional Advocacy' },
     { id: 'repetend3', title: 'Repetend 3' },
-    { id: 'ad', title: 'Public Message' },
+    { id: 'public-message', title: 'Public Message' },
     { id: 'repetend4', title: 'Repetend 4' },
     { id: 'poem', title: 'Free Verse Poem' },
     { id: 'repetend5', title: 'Repetend 5' },
@@ -342,14 +342,14 @@ function App() {
           </div>
         </div>
       </section>
-      <section id="ad" className="section ad-section">
+      <section id="public-message" className="section public-message-section">
         <div className="container">
           <h2 className="section-title">Public Message</h2>
-          <div className="ad-banner-container">
+          <div className="public-message-banner">
             <img
               src="/images/ai-jobs-banner.png"
               alt="Will AI Take Your Job or Help You Grow? - Information about AI impact on jobs with call to action"
-              className="ad-banner-image"
+              className="public-message-image"
             />
           </div>
         </div>
